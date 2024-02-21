@@ -1,0 +1,14 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get -y install curl
+RUN apt-get -y install iputils-ping
+RUN apt-get -y install traceroute
+RUN apt-get -y install vim
+RUN apt-get -y install systemd
+RUN apt-get -y install bridge-utils
+RUN curl -s https://deb.frrouting.org/frr/keys.gpg 
+RUN apt-get update && apt-get -y install frr frr-pythontools
+COPY daemons /etc/frr/
+COPY config_vxlan_multicast.sh .
+COPY config_vxlan_static.sh .
