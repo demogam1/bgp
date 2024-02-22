@@ -46,6 +46,4 @@ router bgp 1
 router ospf
 # Sortie de la configuration OSPF, pas d'autres commandes n'ont été fournies.
 end
-# Enregistrer la configuration dans la configuration permanente de FRR.
-write
 EOT
