@@ -11,21 +11,25 @@ no ipv6 forwarding
 # Configurer l'interface eth0 avec l'adresse IP spécifiée.
 interface eth0
  ip address 10.1.1.1/30
+ ip ospf area 0
 !
 
 # Configurer l'interface eth1 avec l'adresse IP spécifiée.
 interface eth1
  ip address 10.1.1.5/30
+ ip ospf area 0
 !
 
 # Configurer l'interface eth2 avec l'adresse IP spécifiée.
 interface eth2
  ip address 10.1.1.9/30
+ ip ospf area 0
 !
 
 # Configurer l'interface de loopback avec l'adresse IP spécifiée.
 interface lo
  ip address 1.1.1.1/32
+ ip ospf area 0
 !
 
 # Configurer le protocole de routage BGP avec l'AS spécifié.
@@ -47,10 +51,5 @@ router bgp 1
 
 # Configurer le protocole de routage OSPF pour annoncer tous les réseaux.
 router ospf
- network 0.0.0.0/0 area 0
-!
-
-# Configuration de la ligne vty (accès au terminal virtuel).
-line vty
 !
 EOT
